@@ -1,0 +1,43 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="https://elipson.dev/styles.css">
+    <link rel="favicon" type="image/png" href="https://resources.elipson.dev/site/photos/Elipsonlogo.png">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <title>Log in</title>
+</head>
+<html>
+    <body>
+        <style>
+            body {
+                background-image: url('https://resources.elipson.dev/site/photos/this.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+        </style>
+        <div class="container" style="width: 40%; margin: 10px auto; background-color: #333; border-radius: 10px; padding: 20px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <h1 class="text-center">Create an account</h1>
+            <form>
+            <div class="form-group">
+            <label for="username" style="color: white;">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+            <label for="password" style="color: white;">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Continue</button>
+
+            <script>
+            document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const url = `https://server.elipson.dev/?service=register&arg1=${username}&arg2=${password}`;
+            window.location.href = url;
+            });
+            </script>
+            </form>
+        </div>
+    </body>
+</html>
